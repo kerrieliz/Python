@@ -3,7 +3,7 @@
 import os
 import csv
 
-budgetdata_csv = os.path.join("/Users/kerriegill/Documents//Users/kerriegill/Documents/GitHub/Python/PyBank/Python_PyBan_budget_data.csv")
+budgetdata_csv = os.path.join("/Users/kerriegill/Documents/GitHub/Python/PyBank/Python_PyBan_budget_data.csv")
 
 with open(budgetdata_csv, newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
@@ -34,14 +34,14 @@ Rev_Change.append(monthly_change)
 avg_rev_change = round(sum(Rev_Change)/total_months)
 
 #Calculate the greatest increase in profits (date and amount) over the entire period
-if (monthlyRevChange > highestIncRev):
-    highestIncMonth = row[0]
-    highestIncRev = monthlyRevChange 
+if (monthlyRevChange > greatest_rev_increase):
+    greatest_month_increase = row[0]
+    greatest_rev_increase = monthlyRevChange 
 
 #Calculate the greatest decrease in losses (date and amount) over the entire period
-if (monthlyRevChange < lowestDecRev):
-    lowestDecMonth = row[0]
-    lowestDecRev = monthlyRevChange
+if (monthlyRevChange < greatest_rev_decrease):
+    greatest_month_decrease = row[0]
+    greatest_rev_decrease = monthlyRevChange
 
 #final script should both print the analysis to the terminal and export a text file with the results.
 print(avg_rev_change)
