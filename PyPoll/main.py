@@ -9,24 +9,34 @@ with open(electiondata_csv, newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
     csvheader = next(csv_reader, None)
 
- #Three columns in the Dataset: Voter ID, County, and Candidate
- Voter_ID = 0
- County = 0
- Candidate = 0
 
-#Find the total number of votes cast
-
+#Find the total number of votes cast  
+total_votes = 0 
 
 #Find complete list of candidates who received votes
+candidates = set()
 
+for row in (csv_reader):
+    candidate = row[2]
+    candidates.add(candidate)
 
 #Find percentage of votes each candidate won
 
 
 #Find total number of votes each candidate won
+total_candidates = {} 
 
+    if candidate in total_candidates:
+        total_candidates[candidate] += 1
+    else:
+        total_candidates[candidate] = 1
 
 #Find winner of the election based on popular vote.
 
 
 #Final script should both print the analysis to the terminal and export a text file with the results.
+print(winner)
+
+outputtxt = os.path.join('filename.txt')
+with open(outputtxt, 'w') as txtfile:
+    txtwriter = txtfile.write(Winner)
