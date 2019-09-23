@@ -3,7 +3,7 @@
 import os
 import csv
 
-budgetdata_csv = os.path.join("/Users/kerriegill/Documents/GitHub/Python/PyBank/Python_PyBan_budget_data.csv")
+budgetdata_csv = os.path.join("Python_PyBank_budget_data.csv")
 
 with open(budgetdata_csv, newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
